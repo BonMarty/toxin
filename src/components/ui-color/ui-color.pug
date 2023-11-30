@@ -1,0 +1,13 @@
+include ../heading2/heading2.pug
+include ../body-text/body-text.pug
+
+mixin ui-color(options)
+  - var modificator = options.modificator
+  - var colorTitle = options.colorTitle
+  - var colorHex = options.colorHex
+
+  .ui-color
+    div(class=["ui-color__box", modificator])
+    .ui-color__description
+      +heading2(colorTitle)
+      +body-text(colorHex)

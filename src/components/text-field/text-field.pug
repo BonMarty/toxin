@@ -1,0 +1,14 @@
+include ../arrow/arrow.pug
+
+mixin text-field(options)
+  - var variant = options.variant
+
+  if variant === "subscription"
+    div.text-field 
+      input.text-field__input(type=options.type  placeholder=options.placeholder)
+      div.text-field__icon
+        +arrow({direction: 'arrow_forward'})
+
+  else
+    div.text-field 
+      input.text-field__input(type=options.type  placeholder=options.placeholder)

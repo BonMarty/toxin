@@ -1,0 +1,35 @@
+@use 'colors.scss';
+@use 'gradients.scss';
+@use 'fonts.scss';
+
+@use '../components/arrow/arrow.scss';
+@use '../components/body-text/body-text.scss';
+@use '../components/calendar/calendar.scss';
+@use '../components/dropdown/dropdown.scss';
+@use '../components/heading1/heading1.scss';
+@use '../components/heading2/heading2.scss';
+@use '../components/heading3/heading3.scss';
+@use '../components/text-field/text-field.scss';
+@use '../components/dropdown-list-item/dropdown-list-item.scss';
+@use '../components/ui-colors/ui-colors.scss';
+@use '../components/ui-color/ui-color.scss';
+@use '../components/ui-types/ui-types.scss';
+@use '../components/ui-type/ui-type.scss';
+
+html {
+  font-family: montserrat, Arial, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  list-style: none;
+}
+
+.ui-container {
+  padding: 145px 150px;
+  display: flex;
+  justify-content: space-between;
+}

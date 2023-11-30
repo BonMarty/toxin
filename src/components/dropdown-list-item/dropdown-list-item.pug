@@ -1,0 +1,13 @@
+include ../heading3/heading3.pug
+
+mixin dropdown-list-item(options)
+  - var title = options.title
+  - var quantity = options.quantity
+
+  .dropdown-list-item
+    .dropdown-list-item__title
+      +heading3(title)
+    .dropdown-list-item__quantity
+      button.dropdown-list-item__quantity__button.dropdown-list-item__quantity__button_decrementing -
+      +heading3(quantity).dropdown-list-item__quantity-value
+      button.dropdown-list-item__quantity__button.dropdown-list-item__quantity__button_incrementing +

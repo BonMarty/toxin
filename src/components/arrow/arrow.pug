@@ -1,0 +1,8 @@
+mixin arrow(options)
+  - var direction = options.direction
+  - var variant = options.variant
+
+  if variant === "white"
+    span&attributes(attributes).material-symbols-outlined.arrow_white=direction
+  else
+    span&attributes(attributes).material-symbols-outlined.arrow=direction

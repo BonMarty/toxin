@@ -1,0 +1,21 @@
+include ../body-text/body-text.pug
+include ../dropdown-list-item/dropdown-list-item.pug
+
+mixin dropdown(options)
+  - var defaultValue = options.defaultValue
+  - var valuesList = options.valuesList
+
+  .dropdown
+    .dropdown-header
+      +body-text(defaultValue).dropdown-header__title
+      span.material-symbols-outlined.dropdown-header__arrow expand_more
+    .dropdown-list
+      each value in valuesList
+        +dropdown-list-item({title: value, quantity: 0})
+      .dropdown-list__buttons
+        button.dropdown-list__button_clear
+          +heading3('Очистить')
+        button.dropdown-list__button_apply
+          +heading3('Применить')
+
+

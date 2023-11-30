@@ -1,0 +1,33 @@
+@use '../../styles/colors' as colors;
+
+.text-field {
+  position: relative;
+
+  &__input {
+    width: 100%;
+    border: 1px solid colors.$darkShade25;
+    border-radius: 5px;
+    padding: 13px 15px;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      color: colors.$darkShade25;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid colors.$darkShade50;
+
+      &::placeholder {
+        color: colors.$darkShade75;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 10px;
+    right: 22px;
+  }
+}

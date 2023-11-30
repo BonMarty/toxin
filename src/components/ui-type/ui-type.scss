@@ -1,0 +1,13 @@
+@use '../../styles/colors.scss' as colors;
+
+.ui-type {
+  display: flex;
+  gap: 30px;
+
+  &__subtitle {
+    color: colors.$darkShade25;
+    font-weight: 400;
+    width: 37px;
+    text-align: right;
+  }
+}

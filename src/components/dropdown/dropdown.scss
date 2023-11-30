@@ -1,0 +1,58 @@
+@use '../../styles/colors' as colors;
+
+.dropdown {
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 1px solid colors.$darkShade25;
+
+    &__arrow {
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &_expanded {
+        transform: rotate(-180deg);
+      }
+    }
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 7px;
+    max-height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+
+    &_expanded {
+      max-height: fit-content;
+      opacity: 100%;
+      padding: 10px 15px;
+      pointer-events: all;
+      border: 1px solid colors.$darkShade25;
+      border-top: none;
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
+    &__buttons {
+      margin-top: 19px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: colors.$purple;
+      }
+    }
+  }
+}

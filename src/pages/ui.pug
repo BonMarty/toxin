@@ -1,0 +1,23 @@
+include ../components/heading1/heading1.pug
+include ../components/heading2/heading2.pug
+include ../components/heading3/heading3.pug
+include ../components/body-text/body-text.pug
+include ../components/text-field/text-field.pug
+include ../components/dropdown/dropdown.pug
+include ../pug/head.pug
+
+doctype html
+html 
+  +head("UI Kit page")
+  body
+    .ui-container
+      include ../components/ui-colors/ui-colors.pug
+      include ../components/ui-types/ui-types.pug
+      //- +heading1('H1')
+      //- +heading2('H2')
+      //- +heading3('H3')
+      //- +body-text('Body text')
+      //- +text-field({ variant: "standard", type: "text", placeholder: "Enter email" })
+      //- +text-field({ variant: "subscription", type: "email", placeholder: "Enter email" })
+      //- include ../components/calendar/calendar.pug
+      //- +dropdown({defaultValue: "Default value", valuesList: ["Value 1", "Value 2", "Value 3"]})
