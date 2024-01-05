@@ -1,0 +1,25 @@
+@use '../../app/styles/colors.scss' as colors;
+
+.type {
+  display: flex;
+  gap: 30px;
+
+  &__subtitle {
+    font-weight: 400;
+    color: colors.$darkShade25;
+    min-width: 37px;
+    text-align: right;
+
+    &_h1 {
+      font-size: 24px;
+    }
+
+    &_h2 {
+      font-size: 19px;
+    }
+
+    &_h3 {
+      font-size: 12px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+@use '../../../app/styles/colors.scss' as colors;
+@use '../../../app/styles/gradients.scss' as gradients;
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  &-input {
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid transparent;
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(colors.$darkShade25, colors.$darkShade25);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      right: 3px;
+      bottom: 3px;
+      border-radius: 50%;
+      background: gradients.$primaryGradient;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 10;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+    }
+
+    &:checked {
+      background-image: linear-gradient(#fff, #fff), linear-gradient(colors.$purple, colors.$purple);
+
+      &:after {
+        opacity: 100%;
+      }
+    }
+  }
+}

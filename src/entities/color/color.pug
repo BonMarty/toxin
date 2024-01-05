@@ -1,0 +1,12 @@
+include ../../shared/ui/index.pug
+
+mixin color(options)
+  - var modificator = options.modificator
+  - var colorTitle = options.colorTitle
+  - var colorHex = options.colorHex
+
+  .color
+    div(class=["color__box", modificator])
+    .color__description
+      +heading2(colorTitle)
+      +body-text(colorHex)

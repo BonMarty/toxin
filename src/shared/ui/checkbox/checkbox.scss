@@ -1,0 +1,49 @@
+@use '../../../app/styles/colors.scss' as colors;
+@use '../../../app/styles/gradients.scss' as gradients;
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+
+  &-span {
+    max-width: 192px;
+  }
+
+  &-input {
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(colors.$darkShade25, colors.$darkShade25);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      border-radius: 5px;
+      background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.46439 1.40768L5.70703 5.65032L4.29282 7.06453L0.0501771 2.82189L1.46439 1.40768Z' fill='url(%23paint0_linear_18443_16)'/%3E%3Cpath d='M8.53546 -0.00653386L9.94967 1.40768L4.29282 7.06453L2.8786 5.65032L8.53546 -0.00653386Z' fill='url(%23paint1_linear_18443_16)'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_18443_16' x1='7.82835' y1='-0.713641' x2='2.1715' y2='4.94321' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3ClinearGradient id='paint1_linear_18443_16' x1='7.82835' y1='-0.713641' x2='2.1715' y2='4.94321' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%23BC9CFF'/%3E%3Cstop offset='1' stop-color='%238BA4F9'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 10;
+      transition: all 0.3s ease-in-out;
+      opacity: 0;
+    }
+
+    &:checked {
+      background-image: linear-gradient(#fff, #fff), linear-gradient(colors.$purple, colors.$purple);
+
+      &:after {
+        opacity: 100%;
+      }
+    }
+  }
+}

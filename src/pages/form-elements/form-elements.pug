@@ -1,0 +1,19 @@
+include ../../shared/pug/index.pug
+include ../../shared/ui/index.pug
+include ../../entities/index.pug
+include ../../features/index.pug
+
+doctype html
+html 
+  +head("Form Elements page")
+  body
+    .form-elements
+      .text-fields-dropdowns
+        include ../../widgets/text-fields/text-fields.pug
+        include ../../widgets/date-dropdowns/date-dropdowns.pug
+      .checkboxes-radios-toggles-likes-rates
+        include ../../widgets/checkboxes/checkboxes.pug
+        include ../../widgets/radios/radios.pug
+        include ../../widgets/toggles/toggles.pug
+        include ../../widgets/likes/likes.pug
+        include ../../widgets/rates/rates.pug

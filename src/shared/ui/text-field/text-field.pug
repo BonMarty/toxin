@@ -1,0 +1,25 @@
+include ../arrow/arrow.pug
+include ../heading3/heading3.pug
+
+mixin text-field(options)
+  - var variant = options.variant
+  - var title = options.title
+  - var subtitle = options.subtitle
+  - var type = options.type
+  - var placeholder = options.placeholder
+
+  if variant === "subscription"
+    label.text-field 
+      span.text-field__span
+        +heading3(title) 
+        +heading3(subtitle).thin
+      input&attributes(attributes).text-field__input(type=type  placeholder=placeholder)
+      .text-field__icon
+        +arrow({direction: 'arrow_forward'})
+
+  else
+    label.text-field 
+      span.text-field__span
+        +heading3(title) 
+        +heading3(subtitle).thin
+      input&attributes(attributes).text-field__input(type=type  placeholder=placeholder)

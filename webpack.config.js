@@ -27,6 +27,9 @@ module.exports = {
     children: true,
   },
   mode: mode,
+  entry: {
+    app: './src/app/app.js',
+  },
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',
@@ -42,8 +45,8 @@ module.exports = {
     ...pages.map(
       (page) =>
         new HtmlWebpackPlugin({
-          template: `${__dirname}/src/pages/${page}`,
-          filename: `./${page.replace(/\.pug/, '.html')}`,
+          template: `${__dirname}/src/pages/${page}/${page}.pug`,
+          filename: `./${page}.html`,
         }),
     ),
     new MiniCssExtractPlugin({

@@ -1,0 +1,45 @@
+@use '../../app/styles/colors.scss' as colors;
+
+.color {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+
+  &__box {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+
+    &_dark-shade-100 {
+      background-color: colors.$darkShade100;
+    }
+
+    &_dark-shade-75 {
+      background-color: colors.$darkShade75;
+    }
+
+    &_dark-shade-50 {
+      background-color: colors.$darkShade50;
+    }
+
+    &_dark-shade-25 {
+      background-color: colors.$darkShade25;
+    }
+
+    &_dark-shade-5 {
+      background-color: colors.$darkShade5;
+    }
+
+    &_purple {
+      background-color: colors.$purple;
+    }
+
+    &_green {
+      background-color: colors.$green;
+    }
+  }
+
+  &__description {
+    line-height: 28px;
+  }
+}

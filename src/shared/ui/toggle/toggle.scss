@@ -1,0 +1,44 @@
+@use '../../../app/styles/colors.scss' as colors;
+@use '../../../app/styles/gradients.scss' as gradients;
+
+.toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &-input {
+    appearance: none;
+    position: relative;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    background-image: linear-gradient(#fff, #fff),
+      linear-gradient(colors.$darkShade25, colors.$darkShade25);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    cursor: pointer;
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(to right, colors.$darkShade25, colors.$darkShade25);
+      z-index: 10;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:checked {
+      background-image: linear-gradient(#fff, #fff), linear-gradient(colors.$purple, colors.$purple);
+
+      &:after {
+        left: calc(100% - 15px);
+        background: gradients.$primaryGradient;
+      }
+    }
+  }
+}

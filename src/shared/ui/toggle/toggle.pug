@@ -1,0 +1,7 @@
+include ../body-text/body-text.pug
+
+mixin toggle(title)
+  label.toggle
+    input(type="checkbox").toggle-input
+    span.toggle-span
+      +body-text(title)

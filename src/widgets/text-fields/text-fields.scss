@@ -1,0 +1,14 @@
+@use '../../app/styles/colors.scss' as colors;
+
+.text-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .text-field_active {
+    border: 1px solid colors.$darkShade50;
+    &::placeholder {
+      color: colors.$darkShade75;
+    }
+  }
+}

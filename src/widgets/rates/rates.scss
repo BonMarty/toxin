@@ -1,0 +1,10 @@
+.rates {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &-items {
+    display: flex;
+    gap: 20px;
+  }
+}

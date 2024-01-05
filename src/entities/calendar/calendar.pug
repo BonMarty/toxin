@@ -1,0 +1,25 @@
+include ../../shared/ui/index.pug
+
+.calendar
+  .calendar-header
+    +arrow({direction: 'arrow_back'}).prev-month
+    +heading2().current-date
+    +arrow({direction: 'arrow_forward'}).next-month
+  ul.calendar-weeks
+    li Пн
+    li Вт
+    li Ср
+    li Чт
+    li Пт
+    li Сб
+    li Вс
+  ul.calendar-days
+    li.calendar-day_inactive 29
+    li.calendar-day_inactive 30
+    li.calendar-day_inactive 31
+    li.calendar-day_inactive 1
+  .calendar-buttons
+    button.calendar-button.calendar-button_clear
+      +heading3('Очистить')
+    button.calendar-button.calendar-button_apply
+      +heading3('Применить')

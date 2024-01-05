@@ -1,0 +1,78 @@
+@use '../../app/styles/colors.scss' as colors;
+@use '../../app/styles/gradients.scss' as gradients;
+
+.calendar {
+  background-color: #fff;
+  border: 1px solid colors.$darkShade25;
+  border-radius: 5px;
+  padding: 20px;
+  max-width: 320px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+
+    li {
+      width: calc(100% / 7);
+    }
+
+    &.calendar-weeks {
+      font-weight: 700;
+      color: colors.$purple;
+    }
+
+    &.calendar-days {
+      margin: 20px 0;
+
+      .calendar-day {
+        height: 40px;
+        color: colors.$darkShade50;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        &_selected {
+          color: #fff;
+          border-radius: 50%;
+          background: gradients.$primaryGradient;
+        }
+
+        &_inactive {
+          cursor: default;
+          color: colors.$darkShade25;
+        }
+      }
+
+      .today {
+        color: #fff;
+        border-radius: 50%;
+        background: gradients.$secondaryGradient;
+      }
+    }
+  }
+
+  .calendar-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .calendar-button {
+      border: none;
+      background-color: transparent;
+      font-weight: 700;
+      color: colors.$purple;
+      cursor: pointer;
+    }
+  }
+}

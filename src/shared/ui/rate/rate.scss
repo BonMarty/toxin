@@ -1,0 +1,13 @@
+@use '../../../app/styles/gradients.scss' as gradients;
+
+.rate {
+  display: flex;
+
+  span {
+    font-size: 24px;
+    background: gradients.$primaryGradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

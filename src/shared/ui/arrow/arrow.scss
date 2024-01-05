@@ -1,0 +1,14 @@
+@use '../../../app/styles/gradients.scss' as gradients;
+
+.arrow {
+  background: gradients.$primaryGradient;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  cursor: pointer;
+}
+
+.arrow_white {
+  color: #fff;
+  cursor: pointer;
+}

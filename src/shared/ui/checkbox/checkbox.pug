@@ -1,0 +1,7 @@
+include ../body-text/body-text.pug
+
+mixin checkbox(title)
+  label.checkbox
+    input(type="checkbox").checkbox-input
+    span.checkbox-span
+      +body-text(title)

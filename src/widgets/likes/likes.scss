@@ -1,0 +1,11 @@
+.likes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &-items {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}

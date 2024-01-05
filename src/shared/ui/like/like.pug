@@ -1,0 +1,8 @@
+include ../body-text/body-text.pug
+
+mixin like(quantity)
+  label.like
+    input(type="checkbox").like-input
+    span.material-symbols-outlined.like-icon.like-icon_outline favorite
+    span.material-icons.like-icon.like-icon_fill favorite
+    +body-text(quantity).like-quantity

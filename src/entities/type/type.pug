@@ -1,0 +1,20 @@
+include ../../shared/ui/index.pug
+
+mixin type(options)
+  - var variant = options.variant
+  - var subtitle = options.subtitle
+  - var title = options.title
+
+  .type
+    if variant === "h1"
+      +body-text(subtitle).type__subtitle.type__subtitle_h1
+      +heading1(title)
+    else if variant === "h2"
+      +body-text(subtitle).type__subtitle.type__subtitle_h2
+      +heading2(title)
+    else if variant === "h3"
+      +body-text(subtitle).type__subtitle.type__subtitle_h3
+      +heading3(title)
+    else
+      +body-text(subtitle).type__subtitle
+      +body-text(title)

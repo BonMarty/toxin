@@ -1,0 +1,47 @@
+@use '../../../app/styles/colors.scss' as colors;
+
+.text-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  &__span {
+    display: flex;
+    justify-content: space-between;
+
+    .thin {
+      color: colors.$darkShade50;
+      font-weight: 400;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    border: 1px solid colors.$darkShade25;
+    border-radius: 5px;
+    padding: 13px 15px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+
+    &::placeholder {
+      color: colors.$darkShade25;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+      border: 1px solid colors.$darkShade50;
+
+      &::placeholder {
+        color: colors.$darkShade75;
+      }
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 46%;
+    right: 11px;
+  }
+}

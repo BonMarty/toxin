@@ -1,0 +1,7 @@
+include ../../entities/index.pug
+
+.text-fields
+  +text-field({title: "TEXT FIELD", subtitle: "DEFAULT", type: "email", placeholder: "Email"})
+  +text-field({title: "TEXT FIELD", subtitle: "HOVER / FOCUS", type: "text", placeholder: "This is pretty awesome"}).text-field_active
+  +text-field({title: "MASKED TEXT FIELD", type: "text", placeholder: "ДД.ММ.ГГГГ"})
+  +text-field({variant: "subscription", title: "SUBSCRIPTION TEXT FIELD", type: "text", placeholder: "Email"})
