@@ -1,0 +1,17 @@
+include ../../shared/ui/index.pug
+
+.buttons
+  +heading3("BUTTONS")
+  .buttons-items
+    .buttons-items__solid
+      +button({variant: "solid", title: "CLICK ME"})
+      +button({variant: "solid", title: "CLICK ME", disabled: true})
+    .buttons-items__bordered
+      +button({variant: "bordered", title: "CLICK ME"})
+      +button({variant: "bordered", title: "CLICK ME", disabled: true})
+    .buttons-items__text
+      +button({title: "CLICK ME"})
+      +button({title: "CLICK ME", disabled: true})
+    .buttons-items__payment
+      +button({variant: "arrow", title: "ПЕРЕЙТИ К ОПЛАТЕ"})
+    

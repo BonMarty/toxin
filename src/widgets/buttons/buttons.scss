@@ -1,0 +1,18 @@
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__solid,
+    &__bordered,
+    &__text {
+      display: flex;
+      gap: 19px;
+    }
+  }
+}

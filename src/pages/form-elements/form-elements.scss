@@ -1,18 +1,17 @@
 .form-elements {
   padding: 40px;
   min-height: 100vh;
-  display: flex;
-  gap: 126px;
 
-  .text-fields-dropdowns {
+  &__first-row {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
-  }
+    gap: 126px;
 
-  .checkboxes-radios-toggles-likes-rates {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+    .text-fields-dropdowns,
+    .checkboxes-radios-toggles-likes-rates,
+    .slider-buttons-pagination {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
   }
 }

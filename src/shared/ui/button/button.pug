@@ -1,0 +1,25 @@
+include ../heading3/heading3.pug
+include ../arrow/arrow.pug
+
+mixin button(options)
+  - var variant = options.variant
+  - var title = options.title
+  - var disabled = options.disabled
+
+  if variant === "solid"
+    button(disabled=disabled).button.button_solid
+      +heading3(title).button__title.button__title_solid
+
+  else if variant === "arrow"
+    button(disabled=disabled).button.button_solid.button_arrow
+      +heading3(title).button__title.button__title_solid
+      +arrow({variant: "white", direction: "arrow_forward"})
+  
+  else if variant === "bordered"
+    button(disabled=disabled).button.button_bordered
+      +heading3(title).button__title.button__title_bordered
+
+  
+  else
+    button(disabled=disabled).button.button_text
+      +heading3(title).button__title.button__title_text

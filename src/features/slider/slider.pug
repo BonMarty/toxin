@@ -1,0 +1,22 @@
+include ../../shared/ui/index.pug
+
+mixin slider(options)
+  - var minRange = options.minRange
+  - var maxRange = options.maxRange
+  
+  - var defaultMinRange = options.defaultMinRange
+  - var defaultMaxRange = options.defaultMaxRange
+
+  .slider
+    .slider-header
+      +heading3("RANGE SLIDER")
+      .slider-header__range
+        +body-text(`${defaultMinRange}₽`).slider-header__range-min-value
+        +body-text("-").slider-header__range-separator
+        +body-text(`${defaultMaxRange}₽`).slider-header__range-max-value
+    .slider-bar
+      .slider-bar__progress
+      .slider-bar__range
+        input(type="range" min=minRange max=maxRange value=defaultMinRange).slider-bar__range-input.range-min 
+        input(type="range" min=minRange max=maxRange value=defaultMaxRange).slider-bar__range-input.range-max 
+    

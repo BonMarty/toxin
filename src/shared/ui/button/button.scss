@@ -1,0 +1,44 @@
+@use '../../../app/styles/colors.scss' as colors;
+@use '../../../app/styles/gradients.scss' as gradients;
+
+.button {
+  position: relative;
+  padding: 14px 20px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  border-radius: 40px;
+
+  &:disabled {
+    cursor: auto;
+    opacity: 50%;
+  }
+
+  &_solid {
+    background: gradients.$primaryGradient border-box;
+    color: #fff;
+  }
+
+  &_arrow {
+    min-width: 320px;
+
+    span {
+      position: absolute;
+      top: 24%;
+      right: 22px;
+    }
+  }
+
+  &_bordered {
+    color: colors.$purple;
+    background: linear-gradient(#fff, #fff) padding-box, gradients.$primaryGradient border-box;
+  }
+
+  &_text {
+    background: none;
+    color: colors.$purple;
+
+    &:disabled {
+      color: colors.$darkShade50;
+    }
+  }
+}
