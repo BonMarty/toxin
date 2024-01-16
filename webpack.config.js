@@ -27,7 +27,13 @@ module.exports = {
     children: true,
   },
   mode: mode,
-  entry: ['./src/app/app.js', './src/entities/index.js', './src/features/index.js'],
+  entry: [
+    './src/app/app.js',
+    './src/entities/calendar/calendar.js',
+    './src/entities/dropdown-list-item/dropdown-list-item.js',
+    './src/features/dropdown/dropdown.js',
+    './src/features/slider/slider.js',
+  ],
   output: {
     filename: '[name].[contenthash].js',
     assetModuleFilename: 'assets/[hash][ext][query]',

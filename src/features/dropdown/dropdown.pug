@@ -8,24 +8,24 @@ mixin dropdown(options)
   - var valuesList = options.valuesList
 
   if isDate
-    .dropdown.dropdown_date
-      +heading3(title).dropdown-label
-      .dropdown-header.dropdown-header_full-rounded
-        +body-text(defaultValue).dropdown-header__title
-        span.material-symbols-outlined.dropdown-header__arrow expand_more
-      .dropdown-calendar
+    .dropdown.dropdown_date.js-dropdown.js-dropdown-date
+      +heading3(title).dropdown-label.js-dropdown-label
+      .dropdown-header.dropdown-header_full-rounded.js-dropdown-header
+        +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+        span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
+      .dropdown-calendar.js-dropdown-calendar
         include ../../entities/calendar/calendar.pug
   else
-    .dropdown.dropdown_default
-      +heading3(title).dropdown-label
-      .dropdown-header
-        +body-text(defaultValue).dropdown-header__title
-        span.material-symbols-outlined.dropdown-header__arrow expand_more
-      .dropdown-list
+    .dropdown.dropdown_default.js-dropdown.js-dropdown_default
+      +heading3(title).dropdown-label.js-dropdown-label
+      .dropdown-header.js-dropdown-header
+        +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+        span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
+      .dropdown-list.js-dropdown-list
         each value in valuesList
           +dropdown-list-item({title: value, quantity: 0})
         .dropdown-list__buttons
-          button.dropdown-list__button_clear
+          button.dropdown-list__button_clear.js-dropdown-list__button_clear
             +heading3('Очистить')
-          button.dropdown-list__button_apply
+          button.dropdown-list__button_apply.js-dropdown-list__button_apply
             +heading3('Применить')

@@ -1,0 +1,13 @@
+include ../../shared/ui/index.pug
+
+mixin pagination(pagesNumber)
+
+  .pagination
+    +heading3("PAGINATION")
+    .pagination__items
+      +button({variant: "primary", title: 1}).pagination__item
+      +button({variant: "thin", title: 2}).pagination__item
+      +button({variant: "thin", title: 3}).pagination__item
+      +button({variant: "thin", title: "...", disabled: true}).pagination__item.pagination__separator
+      +button({variant: "thin", title: pagesNumber}).pagination__item
+      +button({variant: "secondary"}).pagination__item.pagination__next

@@ -1,11 +1,11 @@
 include ../../shared/ui/index.pug
 
-.calendar
-  .calendar-header
-    +arrow({direction: 'arrow_back'}).prev-month
-    +heading2().current-date
-    +arrow({direction: 'arrow_forward'}).next-month
-  ul.calendar-weeks
+.calendar.js-calendar
+  .calendar-header.js-calendar-header
+    +arrow({direction: 'arrow_back'}).prev-month.js-prev-month
+    +heading2().current-date.js-current-date
+    +arrow({direction: 'arrow_forward'}).next-month.js-next-month
+  ul.calendar-weeks.js-calendar-weeks
     li Пн
     li Вт
     li Ср
@@ -13,13 +13,13 @@ include ../../shared/ui/index.pug
     li Пт
     li Сб
     li Вс
-  ul.calendar-days
-    li.calendar-day_inactive 29
-    li.calendar-day_inactive 30
-    li.calendar-day_inactive 31
-    li.calendar-day_inactive 1
+  ul.calendar-days.js-calendar-days
+    li.calendar-day_inactive.js-calendar-day_inactive 29
+    li.calendar-day_inactive.js-calendar-day_inactive 30
+    li.calendar-day_inactive.js-calendar-day_inactive 31
+    li.calendar-day_inactive.js-calendar-day_inactive 1
   .calendar-buttons
-    button.calendar-button.calendar-button_clear
+    button.calendar-button.calendar-button_clear.js-calendar-button_clear
       +heading3('Очистить')
-    button.calendar-button.calendar-button_apply
+    button.calendar-button.calendar-button_apply.js-calendar-button_apply
       +heading3('Применить')

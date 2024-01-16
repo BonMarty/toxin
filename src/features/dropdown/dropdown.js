@@ -1,18 +1,18 @@
 import handleDropdownListItem from '../../entities/dropdown-list-item/dropdown-list-item';
 
 // Define all dropdowns
-const dropdowns = document.querySelectorAll('.dropdown');
+const dropdowns = document.querySelectorAll('.js-dropdown');
 
 dropdowns.forEach((dropdown) => {
   // Define all components in dropdown
-  const dropdownHeader = dropdown.querySelector('.dropdown-header');
-  const dropdownHeaderTitle = dropdown.querySelector('.dropdown-header__title');
-  const dropdownHeaderArrow = dropdown.querySelector('.dropdown-header__arrow');
-  const dropdownList = dropdown.querySelector('.dropdown-list');
-  const dropdownCalendar = dropdown.querySelector('.dropdown-calendar');
+  const dropdownHeader = dropdown.querySelector('.js-dropdown-header');
+  const dropdownHeaderTitle = dropdown.querySelector('.js-dropdown-header__title');
+  const dropdownHeaderArrow = dropdown.querySelector('.js-dropdown-header__arrow');
+  const dropdownList = dropdown.querySelector('.js-dropdown-list');
+  const dropdownCalendar = dropdown.querySelector('.js-dropdown-calendar');
 
-  const dropdownClearButton = dropdown.querySelector('.dropdown-list__button_clear');
-  const dropdownApplyButton = dropdown.querySelector('.dropdown-list__button_apply');
+  const dropdownClearButton = dropdown.querySelector('.js-dropdown-list__button_clear');
+  const dropdownApplyButton = dropdown.querySelector('.js-dropdown-list__button_apply');
 
   // Create variable with initial dropdown header value
   const dropdownHeaderTitleDefaultValue = dropdownHeaderTitle?.childNodes[0].data;

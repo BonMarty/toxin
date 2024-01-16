@@ -13,8 +13,13 @@
     opacity: 50%;
   }
 
-  &_solid {
+  &_primary {
     background: gradients.$primaryGradient border-box;
+    color: #fff;
+  }
+
+  &_secondary {
+    background: gradients.$secondaryGradient border-box;
     color: #fff;
   }
 
@@ -33,12 +38,22 @@
     background: linear-gradient(#fff, #fff) padding-box, gradients.$primaryGradient border-box;
   }
 
-  &_text {
+  &_text,
+  &_thin {
     background: none;
-    color: colors.$purple;
+    color: colors.$darkShade50;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: colors.$purple;
+    }
 
     &:disabled {
       color: colors.$darkShade50;
+    }
+
+    .button__title_thin {
+      font-weight: 400;
     }
   }
 }

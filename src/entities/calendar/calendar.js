@@ -1,6 +1,6 @@
 import { months } from './lib/months';
 
-const calendars = document.querySelectorAll('.calendar');
+const calendars = document.querySelectorAll('.js-calendar');
 
 calendars.forEach((calendar) => {
   // Define dropdown header and default value
@@ -8,18 +8,18 @@ calendars.forEach((calendar) => {
   const dropdownHeaderTitleDefaultValue = dropdownHeaderTitle.childNodes[0].data;
 
   // Define currentDate that displays current month and year in calendar header
-  const currentDate = calendar.querySelector('.current-date');
+  const currentDate = calendar.querySelector('.js-current-date');
 
   // Define calendar-days that is wrapper for every calendar-day
-  const days = calendar.querySelector('.calendar-days');
+  const days = calendar.querySelector('.js-calendar-days');
 
   // Define arrows
-  const previousMonthArrow = calendar.querySelector('.prev-month');
-  const nextMonthArrow = calendar.querySelector('.next-month');
+  const previousMonthArrow = calendar.querySelector('.js-prev-month');
+  const nextMonthArrow = calendar.querySelector('.js-next-month');
 
   // Define calendar buttons
-  const clearButton = calendar.querySelector('.calendar-button_clear');
-  const applyButton = calendar.querySelector('.calendar-button_apply');
+  const clearButton = calendar.querySelector('.js-calendar-button_clear');
+  const applyButton = calendar.querySelector('.js-calendar-button_apply');
 
   // Define variables for days pick
   let currentDayPick = 0;
@@ -202,10 +202,11 @@ calendars.forEach((calendar) => {
 
   if (applyButton) {
     applyButton.addEventListener('click', () => {
-      const dropdownHeaderArrow =
-        calendar.offsetParent.offsetParent.querySelector('.dropdown-header__arrow');
+      const dropdownHeaderArrow = calendar.offsetParent.offsetParent.querySelector(
+        '.js-dropdown-header__arrow',
+      );
       const dropdownCalendar =
-        calendar.offsetParent.offsetParent.querySelector('.dropdown-calendar');
+        calendar.offsetParent.offsetParent.querySelector('.js-dropdown-calendar');
 
       // Remove dropdown-calendar_active class
       dropdownCalendar.classList.remove('dropdown-calendar_visible');

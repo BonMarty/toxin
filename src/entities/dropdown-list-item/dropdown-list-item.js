@@ -4,7 +4,9 @@ export default function handleDropdownListItem(dropdownList) {
   // Define array with all quantity values from dropdown list
   const quantities = [];
 
-  const dropdownListItemQuantities = dropdownList.querySelectorAll('.dropdown-list-item__quantity');
+  const dropdownListItemQuantities = dropdownList.querySelectorAll(
+    '.js-dropdown-list-item__quantity',
+  );
 
   dropdownListItemQuantities.forEach((item, index) => {
     const decrementButton = item.childNodes[0];

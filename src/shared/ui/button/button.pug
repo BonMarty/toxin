@@ -6,20 +6,27 @@ mixin button(options)
   - var title = options.title
   - var disabled = options.disabled
 
-  if variant === "solid"
-    button(disabled=disabled).button.button_solid
-      +heading3(title).button__title.button__title_solid
+  if variant === "primary"
+    button(disabled=disabled)&attributes(attributes).button.button_primary
+      +heading3(title).button__title.button__title_primary
+
+  else if variant === "secondary"
+    button(disabled=disabled)&attributes(attributes).button.button_secondary
+      +arrow({variant: "white", direction: "arrow_forward"})
 
   else if variant === "arrow"
-    button(disabled=disabled).button.button_solid.button_arrow
-      +heading3(title).button__title.button__title_solid
+    button(disabled=disabled)&attributes(attributes).button.button_primary.button_arrow
+      +heading3(title).button__title.button__title_primary
       +arrow({variant: "white", direction: "arrow_forward"})
   
   else if variant === "bordered"
-    button(disabled=disabled).button.button_bordered
+    button(disabled=disabled)&attributes(attributes).button.button_bordered
       +heading3(title).button__title.button__title_bordered
 
-  
+  else if variant === "thin"
+    button(disabled=disabled)&attributes(attributes).button.button_thin
+      +heading3(title).button__title.button__title_thin
+    
   else
-    button(disabled=disabled).button.button_text
+    button(disabled=disabled)&attributes(attributes).button.button_text
       +heading3(title).button__title.button__title_text
