@@ -6,6 +6,10 @@
   align-items: center;
   gap: 10px;
 
+  &-title {
+    color: colors.$darkShade75;
+  }
+
   &-input {
     appearance: none;
     position: relative;

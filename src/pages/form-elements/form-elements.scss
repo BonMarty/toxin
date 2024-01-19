@@ -1,6 +1,9 @@
 .form-elements {
   padding: 40px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
 
   &__first-row {
     display: flex;
@@ -13,5 +16,10 @@
       flex-direction: column;
       gap: 40px;
     }
+  }
+
+  &__third-row {
+    display: flex;
+    gap: 126px;
   }
 }

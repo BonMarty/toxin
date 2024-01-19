@@ -1,0 +1,8 @@
+include ../../features/index.pug
+
+.dropdowns
+  .dropdowns-state
+    +dropdown({title: "DROPDOWN", label: "DEFAULT", variant: "furniture", defaultValue: "Сколько мебели", valuesList: ["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]})
+    +dropdown({isExpanded: true, title: "DROPDOWN", label: "EXPANDED", variant: "furniture", defaultValue: "Сколько мебели", valuesList: ["СПАЛЬНИ", "КРОВАТИ", "ВАННЫЕ КОМНАТЫ"]})
+  +dropdown({title: "DROPDOWN", variant: "guest", defaultValue: "Сколько гостей", valuesList: ["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]})
+  +dropdown({title: "DROPDOWN", variant: "guest", defaultValue: "Сколько гостей", valuesList: ["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]})

@@ -1,5 +1,3 @@
-import handleDropdownListItem from '../../entities/dropdown-list-item/dropdown-list-item';
-
 // Define all dropdowns
 const dropdowns = document.querySelectorAll('.js-dropdown');
 
@@ -20,7 +18,9 @@ dropdowns.forEach((dropdown) => {
   if (dropdownHeader) {
     if (dropdownList) {
       // Call handleDropdownListItem function with passed dropdownList that run code in dropdown-list-item.js
-      handleDropdownListItem(dropdownList);
+      import('../../entities/dropdown-list-item/dropdown-list-item').then((module) => {
+        module.default(dropdownList);
+      });
     }
 
     dropdownHeader.addEventListener('click', () => {

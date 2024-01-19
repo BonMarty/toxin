@@ -2,9 +2,20 @@
 
 .dropdown {
   position: relative;
+  min-width: 266px;
+  max-width: 287px;
 
   &-label {
     margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__state {
+      font-size: 12px;
+      font-weight: 400;
+      color: colors.$darkShade50;
+    }
   }
 
   &-header {
@@ -21,6 +32,13 @@
     }
 
     &__title {
+      display: -webkit-box;
+      display: -moz-box;
+      -webkit-box-orient: vertical;
+      -moz-box-orient: vertical;
+      line-clamp: 1;
+      -webkit-line-clamp: 1;
+      overflow: hidden;
       pointer-events: none;
     }
 
@@ -39,6 +57,7 @@
     flex-direction: column;
     padding: 0 15px;
     gap: 7px;
+    box-shadow: 0px 10px 20px 0px #1f20410d;
     max-height: 0;
     opacity: 0;
     pointer-events: none;

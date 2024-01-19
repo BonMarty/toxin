@@ -32,6 +32,7 @@
 
     &.calendar-days {
       margin: 20px 0;
+      overflow: hidden;
 
       .calendar-day {
         height: 40px;
@@ -46,6 +47,53 @@
           color: #fff;
           border-radius: 50%;
           background: gradients.$primaryGradient;
+          pointer-events: none;
+        }
+
+        &_first-in-selected,
+        &_last-in-selected {
+          position: relative;
+          transform-style: preserve-3d;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background-color: colors.$purple;
+            opacity: 25%;
+            transform: translateZ(-1px);
+          }
+        }
+
+        &_first-in-selected {
+          &::before {
+            right: 0;
+          }
+        }
+
+        &_last-in-selected {
+          &::before {
+            left: 0;
+          }
+        }
+
+        &_in-range {
+          position: relative;
+          pointer-events: none;
+
+          &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-color: colors.$purple;
+            opacity: 25%;
+          }
         }
 
         &_inactive {

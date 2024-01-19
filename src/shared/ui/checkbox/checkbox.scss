@@ -5,8 +5,13 @@
   display: flex;
   gap: 10px;
 
-  &-span {
+  &_checked {
+    pointer-events: none;
+  }
+
+  &-title {
     max-width: 192px;
+    color: colors.$darkShade50;
   }
 
   &-input {
@@ -36,6 +41,14 @@
       z-index: 10;
       transition: all 0.3s ease-in-out;
       opacity: 0;
+    }
+
+    &_checked {
+      background-image: linear-gradient(#fff, #fff), linear-gradient(colors.$purple, colors.$purple);
+
+      &:after {
+        opacity: 100%;
+      }
     }
 
     &:checked {

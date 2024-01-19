@@ -1,0 +1,11 @@
+.dropdowns {
+  display: flex;
+  justify-content: space-between;
+  gap: 72px;
+
+  &-state {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

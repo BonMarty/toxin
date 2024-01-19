@@ -1,7 +1,15 @@
 include ../body-text/body-text.pug
 
-mixin checkbox(title)
-  label.checkbox
-    input(type="checkbox").checkbox-input
-    span.checkbox-span
-      +body-text(title)
+mixin checkbox(options)
+  - var variant = options.variant
+  - var title = options.title
+
+  if variant === "checked"
+    label.checkbox.checkbox_checked
+      input(type="checkbox").checkbox-input.checkbox-input_checked
+      +body-text(title).checkbox-title
+
+  else
+    label.checkbox
+      input(type="checkbox").checkbox-input
+      +body-text(title).checkbox-title

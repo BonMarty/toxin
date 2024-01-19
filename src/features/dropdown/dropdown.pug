@@ -3,7 +3,10 @@ include ../../entities/index.pug
 
 mixin dropdown(options)
   - var isDate = options.isDate
+  - var isExpanded = options.isExpanded
+  - var variant = options.variant;
   - var title = options.title
+  - var label = options.label
   - var defaultValue = options.defaultValue
   - var valuesList = options.valuesList
 
@@ -16,16 +19,65 @@ mixin dropdown(options)
       .dropdown-calendar.js-dropdown-calendar
         include ../../entities/calendar/calendar.pug
   else
-    .dropdown.dropdown_default.js-dropdown.js-dropdown_default
-      +heading3(title).dropdown-label.js-dropdown-label
-      .dropdown-header.js-dropdown-header
-        +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
-        span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
-      .dropdown-list.js-dropdown-list
-        each value in valuesList
-          +dropdown-list-item({title: value, quantity: 0})
-        .dropdown-list__buttons
-          button.dropdown-list__button_clear.js-dropdown-list__button_clear
-            +heading3('Очистить')
-          button.dropdown-list__button_apply.js-dropdown-list__button_apply
-            +heading3('Применить')
+    if variant === "guest"
+      .dropdown.dropdown_default.js-dropdown_guest.js-dropdown.js-dropdown_default
+        .dropdown-label
+          +heading3(title).dropdown-label__title
+          if label
+            +body-text(label).dropdown-label__state
+        .dropdown-header.js-dropdown-header
+          +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+          if isExpanded
+            span.material-symbols-outlined.dropdown-header__arrow.dropdown-header__arrow_expanded.js-dropdown-header__arrow expand_more
+          else  
+            span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
+          
+        if isExpanded
+          .dropdown-list.dropdown-list_expanded.js-dropdown-list
+            each value in valuesList
+              +dropdown-list-item({title: value, quantity: 0})
+            .dropdown-list__buttons
+              button.dropdown-list__button_clear.js-dropdown-list__button_clear
+                +heading3('Очистить')
+              button.dropdown-list__button_apply.js-dropdown-list__button_apply
+                +heading3('Применить')
+        else
+          .dropdown-list.js-dropdown-list
+            each value in valuesList
+              +dropdown-list-item({title: value, quantity: 0})
+            .dropdown-list__buttons
+              button.dropdown-list__button_clear.js-dropdown-list__button_clear
+                +heading3('Очистить')
+              button.dropdown-list__button_apply.js-dropdown-list__button_apply
+                +heading3('Применить')
+    else if variant === "furniture"
+      .dropdown.dropdown_default.js-dropdown_furniture.js-dropdown.js-dropdown_default
+        .dropdown-label
+          +heading3(title).dropdown-label__title
+          if label
+            +body-text(label).dropdown-label__state
+        .dropdown-header.js-dropdown-header
+          +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+          if isExpanded
+            span.material-symbols-outlined.dropdown-header__arrow.dropdown-header__arrow_expanded.js-dropdown-header__arrow expand_more
+          else  
+            span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
+          
+        if isExpanded
+          .dropdown-list.dropdown-list_expanded.js-dropdown-list
+            each value in valuesList
+              +dropdown-list-item({title: value, quantity: 0})
+            .dropdown-list__buttons
+              button.dropdown-list__button_clear.js-dropdown-list__button_clear
+                +heading3('Очистить')
+              button.dropdown-list__button_apply.js-dropdown-list__button_apply
+                +heading3('Применить')
+        else
+          .dropdown-list.js-dropdown-list
+            each value in valuesList
+              +dropdown-list-item({title: value, quantity: 0})
+            .dropdown-list__buttons
+              button.dropdown-list__button_clear.js-dropdown-list__button_clear
+                +heading3('Очистить')
+              button.dropdown-list__button_apply.js-dropdown-list__button_apply
+                +heading3('Применить')

@@ -6,6 +6,10 @@
   align-items: center;
   gap: 24px;
 
+  &__title {
+    white-space: nowrap;
+  }
+
   &__quantity {
     display: flex;
     align-items: center;

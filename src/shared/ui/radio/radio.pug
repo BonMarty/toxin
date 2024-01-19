@@ -3,5 +3,4 @@ include ../body-text/body-text.pug
 mixin radio(title)
   label.radio
     input(type="radio").radio-input
-    span.radio-span
-      +body-text(title)  
+    +body-text(title).radio-title

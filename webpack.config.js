@@ -27,20 +27,24 @@ module.exports = {
     children: true,
   },
   mode: mode,
-  entry: [
-    './src/app/app.js',
-    './src/entities/calendar/calendar.js',
-    './src/entities/dropdown-list-item/dropdown-list-item.js',
-    './src/features/dropdown/dropdown.js',
-    './src/features/slider/slider.js',
-  ],
+  entry: {
+    app: './src/app/app.js',
+    handleDayClick: './src/entities/calendar/lib/handleDayClick.js',
+    renderCurrentDate: './src/entities/calendar/lib/renderCurrentDate.js',
+    calendar: './src/entities/calendar/calendar.js',
+    getCorrectWord: './src/entities/dropdown-list-item/lib/getCorrectWord.js',
+    dropdownListItem: './src/entities/dropdown-list-item/dropdown-list-item.js',
+    dropdown: './src/features/dropdown/dropdown.js',
+    slider: './src/features/slider/slider.js',
+  },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: '[name].[contenthash].bundle.js',
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
   },
   devtool: mode === 'development' ? 'source-map' : 'eval',
   optimization: {
+    runtimeChunk: 'single',
     splitChunks: {
       chunks: 'all',
     },

@@ -44,7 +44,8 @@
     color: colors.$darkShade50;
     transition: all 0.3s ease-in-out;
 
-    &:hover {
+    &:hover,
+    &:focus {
       color: colors.$purple;
     }
 
