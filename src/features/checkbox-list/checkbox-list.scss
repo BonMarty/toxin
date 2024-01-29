@@ -1,0 +1,40 @@
+@use '../../app/styles/colors.scss' as colors;
+
+.checkbox-list {
+  position: relative;
+  min-width: 266px;
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    &__arrow {
+      color: colors.$darkShade50;
+      transition: all 0.3s ease-in-out;
+
+      &_expanded {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+
+    &_expanded {
+      max-height: fit-content;
+      opacity: 100%;
+      margin-top: 18px;
+      pointer-events: all;
+    }
+  }
+}

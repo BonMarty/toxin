@@ -1,0 +1,8 @@
+include ../../shared/ui/index.pug
+
+mixin bullet-list(items)
+  ul.bullet-list
+    each item in items
+      li.bullet-list-item
+        .bullet-list-item__circle
+        +body-text(item).bullet-list-item__title

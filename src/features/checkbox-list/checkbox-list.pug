@@ -1,0 +1,31 @@
+include ../../shared/ui/index.pug
+
+mixin checkbox-list(options)
+  - var variant = options.variant
+  - var title = options.title
+
+  if variant === "expanded"
+    .checkbox-list.js-checkbox-list
+      .checkbox-list-header.js-checkbox-list-header
+        +heading3(title).checkbox-list-header__title
+        span.material-symbols-outlined.checkbox-list-header__arrow.checkbox-list-header__arrow_expanded.js-checkbox-list-header__arrow expand_more
+      .checkbox-list-items.checkbox-list-items_expanded.js-checkbox-list-items
+        +checkbox({title: "Завтрак"})
+        +checkbox({title: "Письменный стол"})
+        +checkbox({title: "Стул для кормления"})
+        +checkbox({title: "Кроватка"})
+        +checkbox({title: "Телевизор"})
+        +checkbox({title: "Шампунь"})
+
+  else
+    .checkbox-list.js-checkbox-list
+      .checkbox-list-header.js-checkbox-list-header
+        +heading3(title).checkbox-list-header__title
+        span.material-symbols-outlined.checkbox-list-header__arrow.js-checkbox-list-header__arrow expand_more
+      .checkbox-list-items.js-checkbox-list-items
+        +checkbox({title: "Завтрак"})
+        +checkbox({title: "Письменный стол"})
+        +checkbox({title: "Стул для кормления"})
+        +checkbox({title: "Кроватка"})
+        +checkbox({title: "Телевизор"})
+        +checkbox({title: "Шампунь"})

@@ -20,6 +20,12 @@
 
   &__third-row {
     display: flex;
+    justify-content: space-between;
     gap: 126px;
+  }
+
+  &__fourth-row {
+    display: flex;
+    gap: 156px;
   }
 }

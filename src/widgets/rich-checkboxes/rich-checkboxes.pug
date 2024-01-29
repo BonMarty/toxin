@@ -1,0 +1,7 @@
+include ../../shared/ui/index.pug
+
+.rich-checkboxes
+  +heading3("RICH CHECKBOX BUTTONS").rich-checkboxes__title
+  .rich-checkboxes__items
+    +checkbox({variant: "rich", title: "Широкий коридор", subtitle: "Ширина коридоров в номере не менее 91 см."})
+    +checkbox({variant: "rich", title: "Помощник для инвалидов", subtitle: "На 1 этаже вас встретит специалист  и проводит до номера."})

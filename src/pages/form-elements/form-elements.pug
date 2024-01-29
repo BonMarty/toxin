@@ -4,7 +4,7 @@ include ../../entities/index.pug
 include ../../features/index.pug
 
 doctype html
-html 
+html
   +head("Form Elements page")
   body
     .form-elements
@@ -25,3 +25,9 @@ html
       .form-elements__second-row
         include ../../widgets/dropdowns/dropdowns.pug
       .form-elements__third-row
+        include ../../widgets/checkbox-lists/checkbox-lists.pug
+        include ../../widgets/rich-checkboxes/rich-checkboxes.pug
+        include ../../widgets/bullet-lists/bullet-lists.pug
+      .form-elements__fourth-row
+        +advantages([{iconName: "mood", title: "Комфорт", subtitle: "Шумопоглощающие стены"}, {iconName: "location_city", title: "Удобство", subtitle: "Окно в каждой из спален"}])
+        +review({avatarSrc: require("../../app/images/avatar-1.png"), fullName: "Мурад Сарафанов", publishedAt: "5 дней назад", likesQuantity: 12, description: "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей."})

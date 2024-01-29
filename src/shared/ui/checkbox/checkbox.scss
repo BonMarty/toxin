@@ -4,9 +4,28 @@
 .checkbox {
   display: flex;
   gap: 10px;
+  width: max-content;
 
   &_checked {
     pointer-events: none;
+  }
+
+  &-text {
+    display: flex;
+    max-width: 236px;
+    flex-direction: column;
+    gap: 5px;
+
+    .checkbox-title_rich {
+      font-weight: 700;
+      color: colors.$darkShade75;
+      white-space: nowrap;
+    }
+
+    .checkbox-subtitle {
+      font-size: 12px;
+      color: colors.$darkShade50;
+    }
   }
 
   &-title {

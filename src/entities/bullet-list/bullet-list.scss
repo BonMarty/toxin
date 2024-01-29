@@ -1,0 +1,26 @@
+@use '../../app/styles/colors.scss' as colors;
+
+.bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &-item {
+    display: flex;
+    gap: 10px;
+    width: max-content;
+
+    &__circle {
+      background-color: colors.$darkShade25;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-top: 4px;
+    }
+
+    &__title {
+      max-width: 242px;
+      color: colors.$darkShade75;
+    }
+  }
+}

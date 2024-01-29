@@ -1,0 +1,11 @@
+.rich-checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

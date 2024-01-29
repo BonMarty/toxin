@@ -1,0 +1,11 @@
+include ../../shared/ui/index.pug
+
+mixin advantages(items)
+  .advantages
+    each item in items
+      .advantages-item
+        span.material-symbols-outlined.advantages-item__icon=item.iconName
+        .advantages-item__text
+          +body-text(item.title).advantages-item__title
+          +body-text(item.subtitle)
+      hr

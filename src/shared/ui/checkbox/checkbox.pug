@@ -3,8 +3,16 @@ include ../body-text/body-text.pug
 mixin checkbox(options)
   - var variant = options.variant
   - var title = options.title
+  - var subtitle = options.subtitle
 
-  if variant === "checked"
+  if variant === "rich"
+    label.checkbox
+      input(type="checkbox").checkbox-input
+      .checkbox-text
+        +body-text(title).checkbox-title.checkbox-title_rich
+        +body-text(subtitle).checkbox-subtitle
+
+  else if variant === "checked"
     label.checkbox.checkbox_checked
       input(type="checkbox").checkbox-input.checkbox-input_checked
       +body-text(title).checkbox-title

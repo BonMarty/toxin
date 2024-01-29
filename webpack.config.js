@@ -40,7 +40,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].bundle.js',
     assetModuleFilename: 'assets/[hash][ext][query]',
-    clean: true,
+    clean: mode === 'development' ? true : false,
   },
   devtool: mode === 'development' ? 'source-map' : 'eval',
   optimization: {

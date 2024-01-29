@@ -1,0 +1,19 @@
+include ../../shared/ui/index.pug
+
+mixin review(options)
+  - var avatarSrc = options.avatarSrc
+  - var fullName = options.fullName
+  - var publishedAt = options.publishedAt
+  - var likesQuantity = options.likesQuantity
+  - var description = options.description
+
+  .review
+    .review-header
+      .review-header__avatar
+        img(alt="avatar" src=avatarSrc)
+      .review-header__text
+          +body-text(fullName).review-header__name
+          +body-text(publishedAt).review-header__time
+    .review-body
+      +like(likesQuantity)
+      +body-text(description).review-body__description 
