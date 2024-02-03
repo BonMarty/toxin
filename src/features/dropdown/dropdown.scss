@@ -2,8 +2,6 @@
 
 .dropdown {
   position: relative;
-  min-width: 266px;
-  max-width: 287px;
 
   &-label {
     margin-bottom: 5px;
@@ -23,12 +21,15 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px;
     border: 1px solid colors.$darkShade25;
+    transition: all 0.3s ease-in-out;
 
-    &_full-rounded {
-      border-radius: 5px;
+    &_top-rounded {
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
     }
 
     &__title {
@@ -95,7 +96,7 @@
     position: absolute;
     top: 100%;
     margin-top: 5px;
-    left: -40px;
+    left: -30px;
     max-height: 0;
     min-width: 320px;
     width: fit-content;

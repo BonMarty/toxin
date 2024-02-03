@@ -4,8 +4,12 @@ const calendars = document.querySelectorAll('.js-calendar');
 
 calendars.forEach((calendar) => {
   // Define dropdown header and default value
-  const dropdownHeaderTitle = calendar.offsetParent.offsetParent.childNodes[1].childNodes[0];
-  const dropdownHeaderTitleDefaultValue = dropdownHeaderTitle.childNodes[0].data;
+  const dropdownHeaderTitle = calendar.offsetParent.offsetParent
+    ? calendar.offsetParent.offsetParent.childNodes[1].childNodes[0]
+    : null;
+  const dropdownHeaderTitleDefaultValue = dropdownHeaderTitle
+    ? dropdownHeaderTitle.childNodes[0].data
+    : null;
 
   // Define currentDate that displays current month and year in calendar header
   const currentDate = calendar.querySelector('.js-current-date');
@@ -138,7 +142,11 @@ calendars.forEach((calendar) => {
         day.classList.remove('calendar-day_last-in-selected');
         day.classList.remove('calendar-day_in-range');
       });
-      dropdownHeaderTitle.childNodes[0].data = dropdownHeaderTitleDefaultValue;
+
+      if (dropdownHeaderTitle) {
+        dropdownHeaderTitle.childNodes[0].data = dropdownHeaderTitleDefaultValue;
+      }
+
       currentDayPick = 0;
       selectedDays = [];
 
@@ -162,15 +170,22 @@ calendars.forEach((calendar) => {
 
   if (applyButton) {
     applyButton.addEventListener('click', () => {
-      const dropdownHeaderArrow = calendar.offsetParent.offsetParent.querySelector(
-        '.js-dropdown-header__arrow',
-      );
-      const dropdownCalendar =
-        calendar.offsetParent.offsetParent.querySelector('.js-dropdown-calendar');
+      const dropdownHeaderArrow = calendar.offsetParent.offsetParent
+        ? calendar.offsetParent.offsetParent.querySelector('.js-dropdown-header__arrow')
+        : null;
+
+      const dropdownCalendar = calendar.offsetParent.offsetParent
+        ? calendar.offsetParent.offsetParent.querySelector('.js-dropdown-calendar')
+        : null;
+
+      if (dropdownHeaderArrow) {
+        dropdownHeaderArrow.classList.remove('dropdown-header__arrow_expanded');
+      }
 
       // Remove dropdown-calendar_active class
-      dropdownCalendar.classList.remove('dropdown-calendar_visible');
-      dropdownHeaderArrow.classList.remove('dropdown-header__arrow_expanded');
+      if (dropdownCalendar) {
+        dropdownCalendar.classList.remove('dropdown-calendar_visible');
+      }
     });
   }
 });

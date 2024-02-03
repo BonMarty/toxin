@@ -24,12 +24,16 @@
   }
 
   &_arrow {
-    min-width: 320px;
+    min-width: 270px;
 
     span {
       position: absolute;
-      top: 24%;
+      top: 20%;
       right: 22px;
+    }
+
+    @media screen and (min-width: 480px) {
+      min-width: 320px;
     }
   }
 

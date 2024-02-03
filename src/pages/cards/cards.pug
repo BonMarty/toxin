@@ -1,0 +1,11 @@
+include ../../shared/pug/index.pug
+include ../../shared/ui/index.pug
+
+doctype html
+html
+  +head("Cards page")
+  body
+    .cards
+      include ../../entities/search-room/search-room.pug
+      include ../../entities/book/book.pug
+      include ../../entities/calendar/calendar.pug

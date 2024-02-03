@@ -29,13 +29,6 @@ module.exports = {
   mode: mode,
   entry: {
     app: './src/app/app.js',
-    handleDayClick: './src/entities/calendar/lib/handleDayClick.js',
-    renderCurrentDate: './src/entities/calendar/lib/renderCurrentDate.js',
-    calendar: './src/entities/calendar/calendar.js',
-    getCorrectWord: './src/entities/dropdown-list-item/lib/getCorrectWord.js',
-    dropdownListItem: './src/entities/dropdown-list-item/dropdown-list-item.js',
-    dropdown: './src/features/dropdown/dropdown.js',
-    slider: './src/features/slider/slider.js',
   },
   output: {
     filename: '[name].[contenthash].bundle.js',

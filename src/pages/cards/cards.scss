@@ -1,0 +1,8 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  padding: 150px 140px;
+  background-color: #f4f4f6;
+  min-height: 100vh;
+}

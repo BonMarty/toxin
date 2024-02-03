@@ -6,13 +6,19 @@
   border: 1px solid colors.$darkShade25;
   border-radius: 5px;
   padding: 20px;
+  min-width: 320px;
   max-width: 320px;
+  height: fit-content;
 
   &-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
+
+    .current-date {
+      color: colors.$darkShade100;
+    }
   }
 
   ul {

@@ -1,0 +1,38 @@
+include ../../shared/ui/index.pug
+include ../../features/index.pug
+
+form.book(onsubmit="return false")
+  .book-header
+    .book-header__info
+      +body-text("№").book-header__numero
+      span &nbsp;
+      +heading1("888")
+      span &nbsp;
+      +heading3("ЛЮКС").book-header__quality
+    .book-header__price
+      +body-text("9 990₽").book-header__price-number
+      span &nbsp;
+      +body-text("в сутки")
+  .book-main
+    .book-dropdowns
+      +dropdown({isDate: true, title: "ПРИБЫТИЕ", defaultValue: "ДД.ММ.ГГГГ"})
+      +dropdown({isDate: true, title: "ВЫЕЗД", defaultValue: "ДД.ММ.ГГГГ"})
+      +dropdown({variant: "guest", title: "ГОСТИ", defaultValue: "Сколько гостей", valuesList: ["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]})
+    .book-checkout
+      .book-checkout__items
+        .book-checkout__item
+          +body-text("9 990₽ х 4 суток")
+          +body-text("39 960₽") 
+        .book-checkout__item
+          +body-text("Сбор за услуги: скидка 2 179₽")
+          span.info-icon &#9432;
+          +body-text("0₽") 
+        .book-checkout__item
+          +body-text("Сбор за дополнительные услуги")
+          span.info-icon &#9432;
+          +body-text("300₽")
+      .book-checkout__total
+        +heading2("Итого")
+        .divider
+        +heading2("38 081₽")
+  +button({variant: "arrow", title: "ЗАБРОНИРОВАТЬ"})

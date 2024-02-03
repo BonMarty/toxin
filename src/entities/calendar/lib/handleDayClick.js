@@ -29,9 +29,20 @@ export default function handleDayClick(options) {
           // If user select one day it will show this day in dropdownHeaderTitle
           // Example -> 1.1.1111
           if (selectedDays.length === 1) {
-            dropdownHeaderTitle.childNodes[0].data = `${selectedDays[0].childNodes[0].data}.${
-              currentMonth + 1
-            }.${currentYear}`;
+            // Create condition that will check if should add 0 to the start
+            // Example -> 1.1.1111 => 01.01.1111
+            const isSelectedDayLessThanTen = Number(selectedDays[0].childNodes[0].data) < 10;
+            const isCurrentMonthLessThanTen = currentMonth + 1 < 10;
+
+            if (dropdownHeaderTitle) {
+              dropdownHeaderTitle.childNodes[0].data = `${
+                isSelectedDayLessThanTen
+                  ? `0${selectedDays[0].childNodes[0].data}`
+                  : selectedDays[0].childNodes[0].data
+              }.${
+                isCurrentMonthLessThanTen ? `0${currentMonth + 1}` : currentMonth + 1
+              }.${currentYear}`;
+            }
           }
 
           // If user select two days it will show days period
@@ -63,12 +74,13 @@ export default function handleDayClick(options) {
               }
             });
             import('./months').then((module) => {
-              console.log(module.months);
-              dropdownHeaderTitle.childNodes[0].data = `${
-                selectedDays[0].childNodes[0].data
-              } ${module.months[currentMonth].slice(0, 3)} - ${
-                selectedDays[1].childNodes[0].data
-              } ${module.months[currentMonth].slice(0, 3)}`;
+              if (dropdownHeaderTitle) {
+                dropdownHeaderTitle.childNodes[0].data = `${
+                  selectedDays[0].childNodes[0].data
+                } ${module.months[currentMonth].slice(0, 3)} - ${
+                  selectedDays[1].childNodes[0].data
+                } ${module.months[currentMonth].slice(0, 3)}`;
+              }
             });
           }
         }

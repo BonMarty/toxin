@@ -1,0 +1,10 @@
+include ../../shared/ui/index.pug
+include ../../features/index.pug
+
+form.search-room(onsubmit="return false")
+  +heading1("Найдём номера под ваши пожелания").search-room__title
+  .search-room__dropdowns
+    +dropdown({isDate: true, title: "ПРИБЫТИЕ", defaultValue: "ДД.ММ.ГГГГ"})
+    +dropdown({isDate: true, title: "ВЫЕЗД", defaultValue: "ДД.ММ.ГГГГ"})
+    +dropdown({variant: "guest", title: "ГОСТИ", defaultValue: "Сколько гостей", valuesList: ["ВЗРОСЛЫЕ", "ДЕТИ", "МЛАДЕНЦЫ"]})
+  +button({variant: "arrow", title: "ПОДОБРАТЬ НОМЕР"})

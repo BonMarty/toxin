@@ -28,6 +28,8 @@ dropdowns.forEach((dropdown) => {
       dropdownHeaderArrow.classList.toggle('dropdown-header__arrow_expanded');
 
       if (dropdownList) {
+        dropdownHeader.classList.toggle('dropdown-header_top-rounded');
+
         // Toggle class that shows dropdown list
         dropdownList.classList.toggle('dropdown-list_expanded');
       }

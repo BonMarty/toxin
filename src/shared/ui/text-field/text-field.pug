@@ -16,6 +16,13 @@ mixin text-field(options)
       input&attributes(attributes).text-field__input(type=type  placeholder=placeholder)
       .text-field__icon
         +arrow({direction: 'arrow_forward'})
+  
+  else if variant === "masked"
+    label.text-field 
+      span.text-field__span
+        +heading3(title) 
+        +heading3(subtitle).thin
+      input&attributes(attributes).text-field__input(type=type  placeholder=placeholder maxlength=10)
 
   else
     label.text-field 

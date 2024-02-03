@@ -13,7 +13,7 @@ mixin dropdown(options)
   if isDate
     .dropdown.dropdown_date.js-dropdown.js-dropdown-date
       +heading3(title).dropdown-label.js-dropdown-label
-      .dropdown-header.dropdown-header_full-rounded.js-dropdown-header
+      .dropdown-header.js-dropdown-header
         +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
         span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
       .dropdown-calendar.js-dropdown-calendar
@@ -25,14 +25,10 @@ mixin dropdown(options)
           +heading3(title).dropdown-label__title
           if label
             +body-text(label).dropdown-label__state
-        .dropdown-header.js-dropdown-header
-          +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
-          if isExpanded
-            span.material-symbols-outlined.dropdown-header__arrow.dropdown-header__arrow_expanded.js-dropdown-header__arrow expand_more
-          else  
-            span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
-          
         if isExpanded
+          .dropdown-header.dropdown-header_top-rounded.js-dropdown-header
+            +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+            span.material-symbols-outlined.dropdown-header__arrow.dropdown-header__arrow_expanded.js-dropdown-header__arrow expand_more
           .dropdown-list.dropdown-list_expanded.js-dropdown-list
             each value in valuesList
               +dropdown-list-item({title: value, quantity: 0})
@@ -42,6 +38,9 @@ mixin dropdown(options)
               button.dropdown-list__button_apply.js-dropdown-list__button_apply
                 +heading3('Применить')
         else
+          .dropdown-header.js-dropdown-header
+            +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+            span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
           .dropdown-list.js-dropdown-list
             each value in valuesList
               +dropdown-list-item({title: value, quantity: 0})
@@ -50,20 +49,17 @@ mixin dropdown(options)
                 +heading3('Очистить')
               button.dropdown-list__button_apply.js-dropdown-list__button_apply
                 +heading3('Применить')
+          
     else if variant === "furniture"
       .dropdown.dropdown_default.js-dropdown_furniture.js-dropdown.js-dropdown_default
         .dropdown-label
           +heading3(title).dropdown-label__title
           if label
             +body-text(label).dropdown-label__state
-        .dropdown-header.js-dropdown-header
-          +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
-          if isExpanded
-            span.material-symbols-outlined.dropdown-header__arrow.dropdown-header__arrow_expanded.js-dropdown-header__arrow expand_more
-          else  
-            span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
-          
         if isExpanded
+          .dropdown-header.dropdown-header_top-rounded.js-dropdown-header
+            +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+            span.material-symbols-outlined.dropdown-header__arrow.dropdown-header__arrow_expanded.js-dropdown-header__arrow expand_more
           .dropdown-list.dropdown-list_expanded.js-dropdown-list
             each value in valuesList
               +dropdown-list-item({title: value, quantity: 0})
@@ -72,7 +68,10 @@ mixin dropdown(options)
                 +heading3('Очистить')
               button.dropdown-list__button_apply.js-dropdown-list__button_apply
                 +heading3('Применить')
-        else
+        else  
+          .dropdown-header.dropdown-header.js-dropdown-header
+            +body-text(defaultValue).dropdown-header__title.js-dropdown-header__title
+            span.material-symbols-outlined.dropdown-header__arrow.js-dropdown-header__arrow expand_more
           .dropdown-list.js-dropdown-list
             each value in valuesList
               +dropdown-list-item({title: value, quantity: 0})
